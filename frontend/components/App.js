@@ -18,11 +18,18 @@ I love creating intuitive and visually appealing web interfaces."
 I enjoy bringing creativity and aesthetics to the digital world."
   },
 ]
+const initialValues = () => ({
+  fname: '',
+  lname: '',
+  bio: '',
+})
 
 export default function App() {
   const [members, setMembers] = useState(teamMembers)
   const [editing, setEditing] = useState(null)
   // ✨ Create a third state to track the values of the inputs
+  const [values, setValues] = useState(initialValues())
+
 
   useEffect(() => {
     // ✨ If the `editing` state changes from null to the number 2 (for example)
